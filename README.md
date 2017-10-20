@@ -113,7 +113,8 @@ write(`/path/to/file/data.yaml`, data, 'ini');
 
 ## Development Tooling
 
-Described [here](./docs/DevTools.md)
+- [Development tooling](./docs/DevTools.md)
+- [Changelog](./CHANGELOG.md)
 
 ## Related
 
