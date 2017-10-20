@@ -13,10 +13,10 @@ const fs = require("fs");
 const path = require("path");
 const a = require("awaiting");
 const program = require("commander");
+const readline = require("readline");
+const chalk_1 = require("chalk");
 const _1 = require(".");
 const pkg = require('../package.json');
-const readline = require('readline');
-const chalk = require('chalk');
 const readStdin = () => __awaiter(this, void 0, void 0, function* () {
     return new Promise((resolve, reject) => {
         let input = [];
@@ -90,7 +90,7 @@ const p = new Promise((resolve) => __awaiter(this, void 0, void 0, function* () 
         resolve();
     }
     catch (err) {
-        console.error(chalk.red(err.message));
-        console.error(chalk.red(err.stack));
+        console.error(chalk_1.default.red(err.message));
+        console.error(chalk_1.default.red(err.stack));
     }
 }));

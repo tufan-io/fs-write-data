@@ -4,12 +4,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as a from 'awaiting';
 import * as program from 'commander';
-
+import * as readline from 'readline';
+import chalk from 'chalk';
 import { writeFile } from '.';
 
 const pkg = require('../package.json');
-const readline = require('readline');
-const chalk = require('chalk');
 const readStdin = async () => {
   return new Promise((resolve, reject) => {
     let input = [];
