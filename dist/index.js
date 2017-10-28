@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const engchk = require("runtime-engine-check");
 engchk();
+const mkdirp = require("mkdirp");
 const YAML = require("js-yaml");
 const tomlify = require("tomlify-j0.4");
 const ini = require("ini");
@@ -52,6 +53,8 @@ exports.writeFile = (fname, data, ext = null, opts = {}) => __awaiter(this, void
             throw new Error(`Unsupported output format ${out.ext}`);
     }
     if (fname) {
+        const dir = path.dirname(fname);
+        mkdirp(dir);
         yield a.callback(fs.writeFile, fname, output, 'utf8');
     }
     else {

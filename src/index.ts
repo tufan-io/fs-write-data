@@ -2,6 +2,7 @@
 import * as engchk from 'runtime-engine-check';
 engchk(); // checks node version matches spec in package.json
 
+import * as mkdirp from 'mkdirp';
 import * as YAML from 'js-yaml';
 import * as tomlify from 'tomlify-j0.4';
 import * as ini from 'ini';
@@ -64,6 +65,8 @@ export const writeFile = async (
       throw new Error(`Unsupported output format ${out.ext}`);
   }
   if (fname) {
+    const dir = path.dirname(fname);
+    mkdirp(dir);
     await a.callback(fs.writeFile, fname, output, 'utf8');
   } else {
     return output;
