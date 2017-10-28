@@ -40,15 +40,16 @@ a simple pipeline of tasks to perform for each build step.
 
 *aside:* To help with these, we recommend [npm-completion](https://docs.npmjs.com/cli/completion)
 
-    commit      : uses `commitizen` to help format commit messages
-    clean       : `rimraf ./build ./coverage`
-    build       : builds the project
-    build:dist  : build a distribution - skips compiling test files
-    build:watch : watch project files and rebuild when anything changes
-    test        : runs tests with coverage on generated JavaScript
-    secure      : checks all installed dependencies for vulnerabilities
-    lcheck      : compliance check of project dependency license
-    coverage    : prints coverage report over typescript source
+    commit           : uses `commitizen` to help format commit messages
+    clean            : `rimraf ./build ./coverage`
+    build            : builds the project
+    build:dist       : build a distribution - skips compiling test files
+    build:watch      : watch project files and rebuild when anything changes
+    test             : runs tests with coverage on generated JavaScript
+    secure           : checks all installed dependencies for vulnerabilities
+    lcheck           : compliance check of project dependency license
+    coverage         : prints coverage report over typescript source
+    semantic-release : semantic-release on travis
 
 ## Project Structure
 
@@ -57,7 +58,6 @@ The directory structure of a typical project:
     ├── LICENSE
     ├── README.md
     ├── package.json
-    ├── scripts/              - post install scripts
     ├── src/                  - module source (TypeScript)
     │   ├── test/
     │   │   └── specs/
