@@ -30,6 +30,18 @@ for (let ext of ['json', 'yml', 'yaml', 'toml', 'ini']) {
   });
 }
 
+
+test(`fs-write-data API mkdirp`, async t => {
+  const out_file = path.join(tmpdir, `this-dir-created-by-mkdirp`, `data.json`);
+  const exp_file = path.join(fixdir, `data.json`);
+
+  await writeFile(out_file, input);
+  const expected = await rawRead(exp_file);
+  const actual = await rawRead(out_file);
+  // console.log(out_file);
+  t.is(actual, expected, out_file);
+});
+
 test(`fs-write-data API invalid extension`, async t => {
   const out_file = path.join(tmpdir, 'data.xyz');
   const err = await t.throws(writeFile(out_file, input));
@@ -41,7 +53,6 @@ test(`fs-write-data API invalid extension override`, async t => {
   const err = await t.throws(writeFile(out_file, input, 'xyz'));
   t.regex(err.message, /Unsupported output format xyz/, out_file);
 });
-
 
 const expected = [
   '{',

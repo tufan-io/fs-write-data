@@ -66,7 +66,7 @@ export const writeFile = async (
   }
   if (fname) {
     const dir = path.dirname(fname);
-    mkdirp(dir);
+    await a.callback(mkdirp, dir);
     await a.callback(fs.writeFile, fname, output, 'utf8');
   } else {
     return output;
