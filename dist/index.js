@@ -54,7 +54,7 @@ exports.writeFile = (fname, data, ext = null, opts = {}) => __awaiter(this, void
     }
     if (fname) {
         const dir = path.dirname(fname);
-        mkdirp(dir);
+        yield a.callback(mkdirp, dir);
         yield a.callback(fs.writeFile, fname, output, 'utf8');
     }
     else {
