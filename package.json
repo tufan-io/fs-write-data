@@ -1,6 +1,6 @@
 {
   "name": "fs-write-data",
-  "version": "0.0.0-development",
+  "version": "1.0.4",
   "description": "writes input json to multiple output formats - to file or cli",
   "keywords": [
     "json",
